@@ -1,0 +1,50 @@
+{
+    "name": "j-deki-go",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "clean": "node -e \"const fs=require('fs');fs.rmSync('.next',{recursive:true,force:true});\"",
+        "dev": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/dev-fixed-port.ps1",
+        "dev:clean": "npm run clean && npm run dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "eslint app components server src scripts next.config.js postcss.config.js tailwind.config.js eslint.config.mjs",
+        "db:backup": "node scripts/mongodb-backup.mjs",
+        "db:restore": "node scripts/mongodb-restore.mjs",
+        "migrate:r2-account": "node scripts/migrate-r2-account.mjs",
+        "audit:r2-media": "node scripts/audit-r2-media-orphans.mjs",
+        "setup:r2-media-lifecycle": "node scripts/configure-r2-media-lifecycle.mjs"
+    },
+    "dependencies": {
+        "@aws-sdk/client-s3": "^3.1109.0",
+        "@aws-sdk/s3-request-presigner": "^3.1109.0",
+        "@vercel/speed-insights": "^2.0.0",
+        "axios": "^1.19.0",
+        "bcryptjs": "^3.0.3",
+        "bson": "^7.3.2",
+        "dotenv": "^17.4.2",
+        "jsonwebtoken": "^9.0.3",
+        "lucide-react": "0.453.0",
+        "mongoose": "^9.7.4",
+        "nanoid": "3.3.17",
+        "next": "^16.3.0",
+        "react": "18.3.1",
+        "react-dom": "18.3.1",
+        "react-toastify": "^11.1.0",
+        "sharp": "^0.35.3",
+        "wanakana": "^5.3.1",
+        "zod": "^4.3.6"
+    },
+    "devDependencies": {
+        "@types/jsonwebtoken": "^9.0.10",
+        "@types/node": "^25.6.0",
+        "@types/react": "^19.2.14",
+        "@types/react-dom": "^19.2.3",
+        "autoprefixer": "10.4.19",
+        "eslint": "^9.39.5",
+        "eslint-config-next": "^16.3.0",
+        "postcss": "^8.5.23",
+        "tailwindcss": "3.4.7",
+        "typescript": "^6.0.3"
+    }
+}

@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "ignoreDeprecations": "6.0",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@/hooks/*": ["src/shared/hooks/*"],
+      "@/constants/*": ["src/shared/constants/*"],
+      "@/mock/*": ["src/shared/mock/*"],
+      "@/utils/*": ["src/shared/utils/*"]
+    }
+  }
+}
